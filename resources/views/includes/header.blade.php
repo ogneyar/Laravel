@@ -1,3 +1,5 @@
-<a href="/" id="logo">
-	<b><span>PRIZMarket</span></b>
-</a>
+<header>
+	<a href="/" id="logo" />
+		<b><span>PRIZMarket</span></b>
+	</a>
+</header>
