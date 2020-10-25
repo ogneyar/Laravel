@@ -8,21 +8,34 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+				
         <!-- Styles -->
-        <style>
-        </style>
-
+		<link href="/css/app.css" rel="stylesheet">
+		
         <style>
             body {
                 font-family: 'Nunito';
             }
         </style>
     </head>
-		<div>
-		@yield('content')
+	<body>
+		@include('includes.header')
+		
+		@if(Request::is('/'))
+			@include('includes.hero')
+		@endif
+		
+		<div class="container">
+			<div class="row">
+				<div class="col">
+				@yield('content')
+				</div>
+				<div class="col">
+				@include('includes.aside')
+				</div>
+			</div>
 		</div>
 		
-		@include('includes.aside')
+		@include('includes.footer')
     </body>
 </html>
