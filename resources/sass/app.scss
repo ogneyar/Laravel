@@ -1,16 +1,15 @@
-* {
-	margin: 0;
-	padding: 0;
-	outline: none;
-}
-
-html, body {
-	height: 100%;
-}
+@import 'test';
 
 $font-stack: Helvetica, sans-serif;
 $primary-color: #f0f0f0;
 $secondary-color: #f5f5f5;
+$third-color: #f9f9f9;
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
 
 body {
 	font: 100% $font-stack;
@@ -18,5 +17,30 @@ body {
 	.hero {
 		background: $secondary-color;
 		text-align: center;
+		@include transform(rotate(10deg));
 	}
 }
+
+header {
+	a {
+		b {
+			span {z-index: 10;}
+		}
+	}
+}
+
+%repeat-style {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+h1 {
+	@extend %repeat-style;
+	background: $secondary-color;
+}
+p {
+	@extend %repeat-style;
+	background: $third-color;
+}
+
