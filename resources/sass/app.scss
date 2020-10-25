@@ -18,6 +18,8 @@ body {
 		background: $secondary-color;
 		text-align: center;
 		@include transform(rotate(10deg));
+		width: 960px / 960px * 80%;
+		margin-left: 100px;
 	}
 }
 
