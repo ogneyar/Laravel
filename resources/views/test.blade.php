@@ -23,6 +23,36 @@
     <body>
 	
 	<div>Клёвый шрифт!</div>
+	
+	<input type="file" onchange="upload(this.files[0])">
+
+<script>
+function upload(file) {
+  let xhr = new XMLHttpRequest();
+
+  // отслеживаем процесс отправки
+  xhr.upload.onprogress = function(event) {
+    console.log(`Отправлено ${event.loaded} из ${event.total}`);
+  };
+
+  // Ждём завершения: неважно, успешного или нет
+  xhr.onloadend = function() {
+    if (xhr.status == 200) {
+      console.log("Успех");
+    } else {
+      console.log("Ошибка " + this.status);
+    }
+	console.log(xhr.getResponseHeader('Content-Type'));
+	
+  };
+
+  //xhr.open("POST", "http://f0430377.xsph.ru/testjs2/");
+  xhr.open("POST", "/upload");
+  xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+  xhr.send(file);
+  
+}
+</script>
 
     </body>
 </html>
