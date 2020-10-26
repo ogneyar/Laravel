@@ -1,0 +1,100 @@
+
+@media (min-width: 700px) {
+	#wrapper #rightCol {
+		width: 28%;
+		float: left;
+	}}
+	
+	@media (max-width: 699px) {
+	#wrapper #rightCol {
+		width: 80%;
+		margin-left: 10%;
+		float: left;
+	}}
+	
+	#rightCol article {
+		width: 100%;
+	/*	background-color: rgba(255,255,255);*/
+		background-color: rgba(20,17,45);
+		margin-bottom: 20px;
+		float: left;
+		
+		border-radius: 10px;	
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	}
+	
+	#rightCol article:last-child {margin-bottom: 0}
+	
+	#rightCol article img {
+		width: 94%;
+		margin: 3%;
+		float: left;
+		margin-bottom: 10px;
+	}
+	
+	#rightCol article p {
+		font-size: 1em;
+		font-family: Times New Roman, sans-serif;
+	/*	color: #3e3e3f;*/
+		color: #7c7c7c;
+		width: 86%;	
+		float: left;
+		margin: 10px;
+	}
+	
+	#rightCol article a {color: #6accd7; font-size: 1.2em}
+	
+	#rightCol article a:hover {color: #647f82}
+	
+	#rightCol article span {
+		float: center;
+		margin: 3%;
+	/*	color: #7c7c7c;*/
+		color: rgba(172,172,183); 
+		margin-bottom: 10px;
+	}
+	
+	/* для копирования кошелька и публичного ключа*/
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+	.tooltip .tooltiptext {
+		/* visibility: hidden;*/
+		width: 140px;
+		background-color: #555;
+		/*color: #fff;*/
+			
+		color: #7c7c7c;
+			
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px;
+		position: absolute;
+		z-index: 1;
+		bottom: 150%;
+		left: 50%;
+		margin-left: -75px;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	.tooltip .tooltiptext::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #555 transparent transparent transparent;
+	}
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+	.tooltip input {
+		background-color: rgba(20,17,45);
+		color: #7c7c7c;
+		width: 90%;
+		border-width: 0;
+	}

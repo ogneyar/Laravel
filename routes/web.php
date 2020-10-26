@@ -6,6 +6,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/support', function () {
+    return view('support.support');
+});
+
+
+
+
+
+
+
 Route::get('/test', function () {
     return view('test');
 });

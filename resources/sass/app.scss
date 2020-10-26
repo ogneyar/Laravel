@@ -1,7 +1,3 @@
-@import 'test';
-
-$font-stack: Helvetica, sans-serif;
-$primary-color: #f0f0f0;
 $secondary-color: #f5f5f5;
 $third-color: #f9f9f9;
 
@@ -12,8 +8,6 @@ $third-color: #f9f9f9;
 }
 
 body {
-	font: 100% $font-stack;
-	background: $primary-color;
 	.hero {
 		background: $secondary-color;
 		text-align: center;
@@ -23,21 +17,12 @@ body {
 	}
 }
 
-header {
-	a {
-		b {
-			span {z-index: 10;}
-		}
-	}
-}
-
 %repeat-style {
   border: 1px solid #ccc;
   padding: 10px;
   color: #333;
 }
-
-h1 {
+h5 {
 	@extend %repeat-style;
 	background: $secondary-color;
 }
@@ -46,3 +31,120 @@ p {
 	background: $third-color;
 }
 
+
+
+/* НАЧАЛО */
+
+@import 'null';
+
+$font-stack: 'Nunito', sans-serif;
+
+$main-color: rgba(172,172,183);
+$dark-color:rgba(20,17,45);
+$line-color: rgba(255,235,59);
+
+@mixin transition($property) {
+	-webkit-transition: $property;
+	-moz-transition: $property;
+	-o-transition: $property;
+	-ms-transition: $property;
+	transition: $property;
+}
+@mixin select($property) {
+	-webkit-touch-callout: $property;
+    -webkit-user-select: $property;
+    -khtml-user-select: $property;
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    user-select: $property;
+}
+@mixin display($property) {
+	-webkit-display: $property;
+	display: $property;
+}
+@mixin direction($property) {
+	-webkit-flex-direction: $property;
+	flex-direction: $property;
+}
+@mixin hyphens($property) {
+	-webkit-hyphens: $property; 
+	-moz-hyphens: $property; 
+	-ms-hyphens: $property;
+	hyphens: $property; 
+}
+
+a, *:hover {
+	@include transition(all 0.6s ease);
+}
+textarea {
+	padding: 5px;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	float: left;
+	font-family: $font-stack;
+	background-color: $main-color; 	
+	@include display(flex);
+	@include direction(column);	
+	/* Перенос длинного текста */
+	@include hyphens(auto);	
+	word-wrap: break-word;
+	/* ----------------------- */
+}
+
+#wrapper {
+	float: left;
+	flex-grow: 1;	
+}
+
+@media (max-width: 1299px) {
+	#wrapper {
+		width: 86%;	
+		margin-left: 7%;		
+	}
+}
+@media (min-width: 1300px) {
+	#wrapper {
+		width: 70%;
+		margin-left: 15%;		
+	}
+}
+
+
+/* -------------------------------
+		Выделение текста
+----------------------------------*/
+::selection {background: #6accd7; color: #fff;}
+::-moz-selection {background: #6accd7; color: #fff}
+
+
+/* -------------------------------
+		Шапка сайта
+----------------------------------*/
+@import 'header';
+
+	
+/* --------------------------------
+		Верхняя часть контента
+-----------------------------------*/
+@import 'topside';
+
+
+/* -------------------------------
+		Левая часть сайта
+----------------------------------*/
+@import 'content';
+
+
+/* -------------------------------
+		Правая часть сайта
+----------------------------------*/
+@import 'aside';
+
+
+/* -------------------------------
+		Футер сайта
+----------------------------------*/
+@import 'footer';
