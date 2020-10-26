@@ -1,5 +1,5 @@
 <header>
-<a href="/" id="logo" />
+<a href="/" id="logo">
 <b><span>
 @php 
 $i = 1;

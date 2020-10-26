@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* Тесты */
+
 body .hero {
   background: #f5f5f5;
   text-align: center;
@@ -32,6 +34,12 @@ p {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+/* Цвета */
+
 a,
 *:hover {
   transition: all 0.6s ease;
@@ -44,7 +52,6 @@ textarea {
 body {
   width: 100%;
   min-height: 100vh;
-  float: left;
   font-family: "Nunito", sans-serif;
   background-color: #acacb7;
   -webkit-display: flex;
@@ -59,7 +66,6 @@ body {
 }
 
 #wrapper {
-  float: left;
   flex-grow: 1;
 }
 
@@ -104,63 +110,62 @@ header {
   background-color: #14112d;
 }
 
-header #logo {
+header #logo a {
   text-shadow: 2px 2px 4px red, -2px 2px 4px red, 2px -2px 4px red, -2px -2px 4px red;
   /*font-family: Times New Roman, sans-serif;*/
   color: #ffeb3b;
   float: left;
-  width: 25%;
+  width: 100%;
   padding-top: 10px;
 }
 
-#lk_menu span#contact a,
-.lk_topmenu {
-  margin: -10px 0px 5px 10px;
+header #lk_menu {
+  line-height: 15px;
 }
 
-@media (min-width: 1300px) {
-  header a#logo {
-    font-size: 2.5em;
-    margin: 8px 10px 7px 15%;
-  }
-
-  #lk_menu span#contact a,
-  .lk_topmenu {
-    margin-right: 15%;
-  }
+header #lk_menu #contact,
+header #lk_menu .lk_topmenu_li a label#client {
+  margin-top: -20px;
 }
 
-@media (max-width: 1299px) {
-  header a#logo {
-    font-size: 2em;
-    margin: 8px 10px 7px 7%;
-  }
-
-  #lk_menu span#contact a,
-  .lk_topmenu {
-    margin-right: 7%;
-  }
+header #lk_menu #contact a,
+header #lk_menu .lk_topmenu {
+  margin: -10px 0 5px 10px;
 }
 
-#lk_menu span#contact a {
+header #lk_menu #contact a {
   text-shadow: 1px 1px 2px #e0e0e0, 0 0 2em white;
   color: #4c00a4;
   float: right;
   font-size: 1.4em;
 }
 
-#lk_menu span#contact a:hover {
+header #lk_menu #contact a:hover {
   color: #e0e0e0;
 }
 
-#lk_menu {
-  background-color: #14112d;
-  margin-top: -1px;
+@media (min-width: 1300px) {
+  header #logo a {
+    font-size: 2.5em;
+    margin: 8px 10px 7px 15%;
+  }
+
+  header #lk_menu #contact a,
+  header #lk_menu .lk_topmenu {
+    margin-right: 15%;
+  }
 }
 
-#lk_menu span#contact,
-.lk_topmenu_li a label#client {
-  margin-top: -20px;
+@media (max-width: 1299px) {
+  header #logo a {
+    font-size: 2em;
+    margin: 8px 10px 7px 7%;
+  }
+
+  header #lk_menu #contact a,
+  header #lk_menu .lk_topmenu {
+    margin-right: 7%;
+  }
 }
 
 .lk_topmenu {
@@ -168,7 +173,6 @@ header #logo {
 }
 
 .lk_submenu {
-  list-style: none;
   margin: 0;
   padding: 10px 20px;
   position: absolute;
@@ -184,26 +188,21 @@ header #logo {
 
 .lk_topmenu_li {
   display: inline-block;
-  /*float: right;*/
   position: relative;
   padding: 0;
 }
 
 .lk_topmenu a {
   display: block;
-  text-decoration: none;
-  outline: none;
   transition: 0.5s linear;
 }
 
 .lk_submenu li a {
   border: 1px solid green;
   border-radius: 5px;
-  /*color: #8c8c8c;*/
   color: green;
   margin: 7px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0;
   float: left;
   width: 150px;
   text-align: center;
@@ -223,7 +222,7 @@ header #logo {
   color: white;
   border: 4px double white;
   border-radius: 5px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px;
   margin-bottom: 5px;
 }
 
@@ -234,6 +233,10 @@ header #logo {
   box-shadow: 0 0 20px red;
   cursor: pointer;
 }
+
+/* -------------------------------
+			Меню
+----------------------------------*/
 
 @media (max-width: 699px) {
   nav {
@@ -369,8 +372,6 @@ nav#fixed a:hover {
 }
 
 #slideMenu {
-  float: left;
-  color: rgba(255, 255, 255, 0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;

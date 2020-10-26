@@ -2,14 +2,12 @@
 if ($_SERVER['HTTP_HOST']=='www.prizmarket.ru') header('Location: https://prizmarket.ru');
 if ($_SERVER['HTTP_HOST']=='www.prizmarket.online') header('Location: https://prizmarket.online');
 
-/*include_once '../vendor/autoload.php';	*/
+include_once '../vendor/autoload.php';
 
 $количество_лотов = 10;
-
+include_once 'conect.php';
+include_once 'pzmarket.php';
 ?>
-@include('includes.conect')
-@include('includes.pzmarket')
-
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -114,17 +112,17 @@ $количество_лотов = 10;
 	
     </head>
 	<body>
-		@include('includes.header')		
-
-		@include('includes.lk_menu')
+		<header>
+			@include('includes.logo')
+			@include('includes.lk_menu')
+		</header>
 
 		@include('includes.menu')
+		<div id="slideMenu"></div>
 
 		@if(Request::is('/test'))
 			@include('includes.hero')
-		@endif
-
-		<div id="slideMenu"></div>
+		@endif	
 
 		<div id="wrapper">
 			<div id="TopCol">		

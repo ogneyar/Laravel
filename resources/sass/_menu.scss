@@ -1,0 +1,126 @@
+@media (max-width: 699px) {
+nav {
+	width: 90%;
+	float: left;
+	background-color: #ffffff;
+	padding: 0 5% 0.7% 5%;
+}}
+@media (max-width: 1299px) and (min-width: 700px) {
+nav {
+	width: 86%;
+	float: left;
+	background-color: #ffffff;
+	padding: 0 7% 0.7% 7%;
+}}
+@media (min-width: 1300px) {
+nav {
+	width: 70%;
+	float: left;
+	background-color: #ffffff;
+	padding: 0 15% 0.7% 15%;
+}}
+
+
+@media (min-width: 837px){
+nav a, nav#fixed a {
+	border-top: 5px solid rgba(255,255,255,0);
+}}
+
+nav a, nav#fixed a {	
+	padding: 0.5% 1% 0 1%;
+	float: left;
+	font-family: Times New Roman, sans-serif;
+	font-size: 1.4em;
+	color: #686869;
+}
+
+nav#fixed {
+	position: fixed;
+	top: 0;
+	background-color: rgba(255,255,255,0.87);
+	border-color: rgba(224,224,224,0.87);
+
+	@include transition(all 0.6s ease);
+	
+}
+
+nav#fixed:hover {
+	background-color: #fff;
+}
+
+nav a:hover, nav#fixed a:hover {
+	border-top: 5px solid rgba(255,235,59);
+	color: #8c8c8c;
+}
+
+
+@media (max-width: 699px){
+.line-menu {
+	display: none;
+}}
+@media (min-width: 700px){
+.topmenu {
+	display: none;
+}}
+.line-menu a {
+	width: calc(90% / 5);
+	text-align: center;
+}
+
+.submenu {
+	list-style: none;   
+	margin: 0;
+	padding: 20px;
+	  
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 10;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	
+	display: none;
+	/*background: white;*/
+	background: rgba(230,230,230);
+	border: 1px solid #8c8c8c;
+	border-radius: 5px;
+}
+.topmenu_li {
+	display: inline-block;
+	margin-right: 20px;
+	/*float: left;*/
+	position: relative;
+}
+.topmenu_li:last-child {
+  margin-right: 0;
+}
+.topmenu a {
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	outline: none;
+	transition: .5s linear;
+}
+
+.submenu li a {
+	border: 1px solid blue;
+	border-radius: 5px;
+	padding: 10px 15px;
+	/*color: #8c8c8c;	*/
+	color: blue;
+	margin: 5px;
+	float: left;
+}
+
+.topmenu_li:hover .submenu {
+  display: block;
+}
+.fa {
+  font-family: "FontAwesome";
+  color: inherit;
+  padding-left: 10px;
+}
+
+
