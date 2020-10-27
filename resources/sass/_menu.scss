@@ -15,7 +15,7 @@ nav {
 	}
 }
 
-nav a, nav#fixed a {
+nav a {
 	float: left;
 	font-size: 1.4em;
 	color: #686869;
@@ -23,6 +23,7 @@ nav a, nav#fixed a {
 }
 
 nav#fixed {
+	z-index: 2;
 	position: fixed;
 	top: 0;
 	background-color: rgba(255,255,255,0.87);
@@ -55,45 +56,6 @@ nav a:hover, nav#fixed a:hover {
 	text-align: center;
 }
 
-.submenu {
-	margin: 0;
-	padding: 20px;	  
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 10;
-	@include transition(0.5s ease-in-out);
-	display: none;	
-	background: $beige;
-	border: 1px solid #8c8c8c;
-	border-radius: 5px;
-}
-.topmenu_li {
-	display: inline-block;
-	margin-right: 20px;
-	position: relative;
-}
-.topmenu_li:last-child {
-	margin-right: 0;
-}
-.topmenu a {
-	display: block;
-	@include transition(0.5s linear);
-}
-
-.submenu li a {
-	border: 1px solid blue;
-	border-radius: 5px;
-	padding: 10px 15px;
-	color: blue;
-	margin: 5px;
-	float: left;
-}
-
-.topmenu_li:hover .submenu {
-  display: block;
-}
-
 .fa {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;	
@@ -108,4 +70,77 @@ nav a:hover, nav#fixed a:hover {
 .fa-lg {
 	font-size: 2em;
 	vertical-align: -30%;
+}
+.fa-times:before{
+	content:"\f00d"
+}
+
+
+.sidebar {
+	position: fixed;
+	left: -250px;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	background: $dark-color;
+	@include transition(all 0.5s ease);
+}
+
+.sidebar header {
+	font-size: 22px;
+	color: $beige;
+	text-align: center;
+	line-height: 70px;		
+	background: $violet;/*#063146;*/
+	@include select(none);
+}
+
+.sidebar ul a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 55px;
+	font-size: 20px;
+	color: $beige;
+	padding-left: 40px; 
+	box-sizing: border-box;
+	border-top: 1px solid rgba(255,255,255,.1);
+	border-bottom: 1px solid black;	
+	@include transition(0.4s);
+}
+
+.sidebar ul li:hover a {
+	padding-left: 50px;
+}
+
+#check {
+	display: none;
+}
+
+label #btn {
+	line-height: 1.3em;
+}
+
+label #cancel {
+	position: absolute;
+	cursor: pointer;
+	background: $beige;
+	border-radius: 3px;
+
+	z-index: 10;
+	left: -195px;
+	top: 17px;
+	font-size: 30px;
+	color: $violet;
+	padding: 4px 9px;
+	@include transition(all 0.5s ease);
+}
+
+#check:checked ~ .sidebar {
+	left: 0;
+}
+
+#check:checked ~ label #cancel {
+	left: 195px;		
+	position: fixed;
 }

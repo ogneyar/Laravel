@@ -5,16 +5,22 @@
 		<a href="/category">Категории</a>
 		<a href="/support">ТехПоддержка</a>
 		<a href="/about">О нас</a>
-	</div>
-	<ul class="topmenu">
-		<li class="topmenu_li"><a href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i><!-- Меню--></a>
-			<ul class="submenu">	
+	</div>	
+	<div class="topmenu">		
+		<input type="checkbox" id="check">
+		<label for="check">			
+			<i class="fa fa-bars fa-lg" aria-hidden="true" id="btn"></i>
+			<i class="fa fa-times fa-lg" aria-hidden="true" id="cancel"></i>
+		</label>	
+		<div class="sidebar">
+			<header>&nbsp;М&nbsp;Е&nbsp;Н&nbsp;Ю&nbsp;</header>
+			<ul>	
 				<li><a href="/">Главная</a></li>
 				<li><a href="/details">Подробности</a></li>
 				<li><a href="/category">Категории</a></li>
 				<li><a href="/support">ТехПоддержка</a></li>
 				<li><a href="/about">О нас</a></li>
 			</ul>
-		</li>
-	</ul>
+		</div>	
+	</div>
 </nav>
