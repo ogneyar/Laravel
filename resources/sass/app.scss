@@ -1,7 +1,6 @@
 /* Тесты */
 
 $secondary-color: #f5f5f5;
-$third-color: #f9f9f9;
 
 @mixin transform($property) {
   -webkit-transform: $property;
@@ -24,13 +23,9 @@ body {
   padding: 10px;
   color: #333;
 }
-h5 {
+h6 {
 	@extend %repeat-style;
 	background: $secondary-color;
-}
-p {
-	@extend %repeat-style;
-	background: $third-color;
 }
 
 
@@ -52,7 +47,7 @@ $font-stack: 'Nunito', sans-serif;
 /* Цвета */
 $main-color: rgba(172,172,183);
 $dark-color: rgba(20,17,45);
-$line-color: rgba(255,235,59);
+$yellow: rgba(255,235,59);
 $violet: rgba(76,0,164);
 $beige: rgba(230,230,230);
 
@@ -89,12 +84,42 @@ $beige: rgba(230,230,230);
 a, *:hover {
 	@include transition(all 0.6s ease);
 }
-h1 {
-	width: 100%;
+h1, h2, h3, h4, h5 {
+	width: 90%;
+	margin: 2% 5%;
 	text-align: center;	
+}
+p {		
+	width: 90%;
+	margin: 2% 5%;
+	float: left;
+	font-size: 1.2em;
 }
 textarea {
 	padding: 5px;
+}
+label {
+	font-size: 1.2em;
+}
+
+.b_blue {
+	color: blue;
+}
+.b_green {
+	color: green;
+}
+.b_red {
+	color: red;
+}
+.button {
+	padding: 3px 10px 3px 10px;
+	background-color: rgb(74, 13, 173); 
+	color: white;
+	border: 2px solid rgb(43, 11, 93);
+}
+.button:hover {
+	background-color: rgb(101, 23, 228);
+	cursor: pointer;
 }
 
 body {

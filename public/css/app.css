@@ -10,19 +10,14 @@ body .hero {
   margin-left: 100px;
 }
 
-p,
-h5 {
+h6 {
   border: 1px solid #ccc;
   padding: 10px;
   color: #333;
 }
 
-h5 {
+h6 {
   background: #f5f5f5;
-}
-
-p {
-  background: #f9f9f9;
 }
 
 /* НАЧАЛО */
@@ -53,13 +48,53 @@ a,
   transition: all 0.6s ease;
 }
 
-h1 {
-  width: 100%;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  width: 90%;
+  margin: 2% 5%;
   text-align: center;
+}
+
+p {
+  width: 90%;
+  margin: 2% 5%;
+  float: left;
+  font-size: 1.2em;
 }
 
 textarea {
   padding: 5px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+.b_blue {
+  color: blue;
+}
+
+.b_green {
+  color: green;
+}
+
+.b_red {
+  color: red;
+}
+
+.button {
+  padding: 3px 10px 3px 10px;
+  background-color: #4a0dad;
+  color: white;
+  border: 2px solid #2b0b5d;
+}
+
+.button:hover {
+  background-color: #6517e4;
+  cursor: pointer;
 }
 
 body {
@@ -612,93 +647,29 @@ nav#fixed a:hover {
 ----------------------------------*/
 
 #leftCol {
-  background-color: #acacb7;
-}
-
-#leftCol #form_nazad {
-  width: 40%;
-}
-
-#leftCol #form_dalee {
-  width: 40%;
-}
-
-#support div,
-#o_prizmarket div {
-  width: 90%;
-  margin: 5%;
   float: left;
 }
 
-#support h1 b,
-#o_prizmarket h1 b {
-  color: blue;
-}
-
-#support h3 b {
-  color: green;
-}
-
-#o_prizmarket h3 b {
-  color: red;
-}
-
-.button {
-  padding: 3px 10px 3px 10px;
-  background-color: #ffe;
-  color: #930;
-}
-
-.button:hover {
-  background-color: grey;
-  color: white;
-  border: 2px solid #f8d881;
-  cursor: pointer;
-}
-
-#leftCol article h4 {
-  text-align: center;
-  color: #acacb7;
-  font-size: 1.2em;
-  font-family: Times New Roman, sans-serif;
-  width: 86%;
-  margin: 2% 7%;
-}
-
-#leftCol p label {
-  font-size: 1.2em;
-}
-
-#leftCol article {
-  padding-bottom: 20px;
-}
-
-#warning {
-  color: red;
-  text-align: center;
-}
-
-@media (min-width: 700px) {
-  #wrapper #leftCol {
-    width: 69%;
-    margin-right: 3%;
-    float: left;
-  }
-}
-
 @media (max-width: 699px) {
-  #wrapper #leftCol {
+  #leftCol {
     width: 100%;
-    float: left;
     margin-bottom: 20px;
   }
 }
 
+@media (min-width: 700px) {
+  #leftCol {
+    width: 69%;
+    margin-right: 3%;
+  }
+}
+
 #leftCol article {
-  width: 100%;
-  background-color: #14112d;
-  margin-bottom: 20px;
   float: left;
+  background-color: #14112d;
+  color: #e6e6e6;
+  padding: 20px;
+  margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -706,6 +677,28 @@ nav#fixed a:hover {
 #leftCol article:last-child {
   margin-bottom: 0;
 }
+
+#leftCol article img {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+#leftCol article a {
+  color: #ffeb3b;
+  font-size: 1.2em;
+}
+
+#leftCol article a:hover {
+  color: #647f82;
+}
+
+#warning {
+  color: red;
+  text-align: center;
+}
+
+/* ЭТО то что ниже НАДО ДОРАБОТАТЬ!!! */
 
 /*----------------------------------*/
 
@@ -764,74 +757,46 @@ nav#fixed a:hover {
 
 /*----------------------------------*/
 
-#leftCol article img {
-  width: 100%;
-  float: left;
-  margin-bottom: 10px;
+#leftCol #form_nazad {
+  width: 40%;
 }
 
-#leftCol article h2 {
-  font-size: 1em;
-  color: #acacb7;
-  width: 90%;
-  margin-left: 5%;
-  float: left;
+#leftCol #form_dalee {
+  width: 40%;
 }
 
-#leftCol article p {
-  font-size: 1em;
-  font-family: Times New Roman, sans-serif;
-  color: #acacb7;
-  width: 86%;
-  margin: 2% 7%;
-  float: left;
-}
+/* -------------------------------*/
 
-#leftCol article a {
-  color: #ffeb3b;
-  font-size: 1.2em;
-}
-
-#leftCol article h4 a {
-  font-size: 1em;
-}
-
-#leftCol article a:hover {
-  color: #647f82;
-}
-
-#leftCol article span {
-  float: right;
-  color: #7c7c7c;
-}
+/* -------------------------------*/
 
 /* -------------------------------
 		Правая часть сайта
 ----------------------------------*/
 
-@media (min-width: 700px) {
-  #wrapper #rightCol {
-    width: 28%;
+@media (max-width: 699px) {
+  #rightCol {
+    width: 90%;
+    margin-left: 5%;
     float: left;
   }
 }
 
-@media (max-width: 699px) {
-  #wrapper #rightCol {
-    width: 80%;
-    margin-left: 10%;
+@media (min-width: 700px) {
+  #rightCol {
+    width: 28%;
     float: left;
   }
 }
 
 #rightCol article {
   width: 100%;
-  /*	background-color: rgba(255,255,255);*/
   background-color: #14112d;
   margin-bottom: 20px;
   float: left;
+  color: #e6e6e6;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: center;
 }
 
 #rightCol article:last-child {
@@ -845,31 +810,13 @@ nav#fixed a:hover {
   margin-bottom: 10px;
 }
 
-#rightCol article p {
-  font-size: 1em;
-  font-family: Times New Roman, sans-serif;
-  /*	color: #3e3e3f;*/
-  color: #7c7c7c;
-  width: 86%;
-  float: left;
-  margin: 10px;
-}
-
 #rightCol article a {
-  color: #6accd7;
+  color: #ffeb3b;
   font-size: 1.2em;
 }
 
 #rightCol article a:hover {
   color: #647f82;
-}
-
-#rightCol article span {
-  float: center;
-  margin: 3%;
-  /*	color: #7c7c7c;*/
-  color: #acacb7;
-  margin-bottom: 10px;
 }
 
 /* для копирования кошелька и публичного ключа*/
@@ -880,17 +827,15 @@ nav#fixed a:hover {
 }
 
 .tooltip .tooltiptext {
-  /* visibility: hidden;*/
   width: 140px;
-  background-color: #555;
-  /*color: #fff;*/
-  color: #7c7c7c;
+  background-color: #b9b9b9;
+  color: #970505;
   text-align: center;
   border-radius: 6px;
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
+  top: -120px;
   left: 50%;
   margin-left: -75px;
   opacity: 0;
@@ -915,7 +860,7 @@ nav#fixed a:hover {
 
 .tooltip input {
   background-color: #14112d;
-  color: #7c7c7c;
+  color: #e6e6e6;
   width: 90%;
   border-width: 0;
 }
@@ -930,12 +875,10 @@ footer {
   padding: 0.8% 1%;
   margin-top: 20px;
   background-color: #14112d;
-  margin-bottom: -20px;
 }
 
 footer div#rights {
   float: left;
-  font-family: "mr_InsulaG";
   color: white;
   width: 55%;
   margin-left: 5%;
