@@ -863,6 +863,7 @@ nav#fixed a:hover {
   color: #e6e6e6;
   width: 90%;
   border-width: 0;
+  text-align: center;
 }
 
 /* -------------------------------
