@@ -15,7 +15,7 @@ header {
 			margin-top: -20px;
 		}
 		#contact a, .lk_topmenu {
-			margin: -10px 0 5px 10px;
+			margin: -10px 0 5px 30px;
 		}
 		#contact a {
 			text-shadow: 1px 1px 2px #e0e0e0, 0 0 2em white;
@@ -37,7 +37,7 @@ header {
 			width: 70%;
 		}
 		#lk_menu {
-			#contact a, .lk_topmenu {	
+			#contact a:first-child, .lk_topmenu {	
 				margin-right: 15%;
 			}
 		}
@@ -51,7 +51,7 @@ header {
 			width: 86%;
 		}
 		#lk_menu {
-			#contact a, .lk_topmenu {	
+			#contact a:first-child, .lk_topmenu {	
 				margin-right: 7%;
 			}
 		}

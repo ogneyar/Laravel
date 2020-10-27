@@ -178,7 +178,7 @@ header #lk_menu .lk_topmenu_li a label#client {
 
 header #lk_menu #contact a,
 header #lk_menu .lk_topmenu {
-  margin: -10px 0 5px 10px;
+  margin: -10px 0 5px 30px;
 }
 
 header #lk_menu #contact a {
@@ -199,7 +199,7 @@ header #lk_menu #contact a:hover {
     width: 70%;
   }
 
-  header #lk_menu #contact a,
+  header #lk_menu #contact a:first-child,
   header #lk_menu .lk_topmenu {
     margin-right: 15%;
   }
@@ -212,7 +212,7 @@ header #lk_menu #contact a:hover {
     width: 86%;
   }
 
-  header #lk_menu #contact a,
+  header #lk_menu #contact a:first-child,
   header #lk_menu .lk_topmenu {
     margin-right: 7%;
   }
