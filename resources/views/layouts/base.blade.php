@@ -37,9 +37,6 @@ include_once 'pzmarket.php';
         <!-- Style css -->
 		<link rel="stylesheet" href="/css/app.css">
 
-		<!-- Font awesome -->
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-			
 		<!-- Icons -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -53,61 +50,23 @@ include_once 'pzmarket.php';
 		<!-- Add libs for jQuery, Ajax... -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
 		
-		<!-- Прилипание меню к верху страницы -->
-		<script type="text/javascript">
-			if(screen.width > 300) { // Animate navigation
-				$(document).ready(function() {
-				// функцию скролла привязать к окну браузера
-					$(window).scroll(function(){
-						var distanceTop = $('#slideMenu').offset().top;
-						if ($(window).scrollTop() >= distanceTop)
-							$ ('nav').attr ("id", "fixed");
-						else //if ($(window).scrollTop() < distanceTop)
-							$ ('nav').attr ("id", "nav");
-					});
-				});
-			}
-		</script>	
-
+		<!-- Основной скрипт сайта -->
+		<script src="/js/app.js"></script> 
+		
 		@if(Request::is('/'))
-		<style type="text/css">
-			@media (min-width: 700px) {
-			nav a:nth-child(1), nav#fixed a:nth-child(1) {
-				border-top: 5px solid rgba(255,235,59);
-			}}
-		</style>
+			@include('layouts.line', ['number' => 1])
 		@endif
-		@if(Request::is('podrobnosti'))
-		<style type="text/css">
-			@media (min-width: 700px) {
-			nav a:nth-child(2), nav#fixed a:nth-child(2) {
-				border-top: 5px solid rgba(255,235,59);
-			}}
-		</style>
+		@if(Request::is('details'))
+			@include('layouts.line', ['number' => 2])
 		@endif
-		@if(Request::is('kategory'))
-		<style type="text/css">
-			@media (min-width: 700px) {
-			nav a:nth-child(3), nav#fixed a:nth-child(3) {
-				border-top: 5px solid rgba(255,235,59);
-			}}
-		</style>
+		@if(Request::is('category'))
+			@include('layouts.line', ['number' => 3])
 		@endif		
 		@if(Request::is('support'))
-		<style type="text/css">
-			@media (min-width: 700px) {
-			nav a:nth-child(4), nav#fixed a:nth-child(4) {
-				border-top: 5px solid rgba(255,235,59);
-			}}
-		</style>
+			@include('layouts.line', ['number' => 4])
 		@endif
 		@if(Request::is('about'))
-		<style type="text/css">
-			@media (min-width: 700px) {
-			nav a:nth-child(5), nav#fixed a:nth-child(5) {
-				border-top: 5px solid rgba(255,235,59);
-			}}
-		</style>
+			@include('layouts.line', ['number' => 5])
 		@endif		
 	
     </head>

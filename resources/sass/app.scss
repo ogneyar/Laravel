@@ -39,13 +39,21 @@ p {
 
 @import 'null';
 
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0');
+	src: url('/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 $font-stack: 'Nunito', sans-serif;
 
 /* Цвета */
 $main-color: rgba(172,172,183);
-$dark-color:rgba(20,17,45);
+$dark-color: rgba(20,17,45);
 $line-color: rgba(255,235,59);
-$violet:  rgba(76,0,164);
+$violet: rgba(76,0,164);
 $beige: rgba(230,230,230);
 
 @mixin transition($property) {
@@ -80,6 +88,10 @@ $beige: rgba(230,230,230);
 
 a, *:hover {
 	@include transition(all 0.6s ease);
+}
+h1 {
+	width: 100%;
+	text-align: center;	
 }
 textarea {
 	padding: 5px;
@@ -136,6 +148,7 @@ body {
 
 
 #slideMenu {
+	height: 20px;
 	@include select(none);
 }
 

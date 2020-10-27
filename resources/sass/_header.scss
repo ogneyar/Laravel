@@ -5,11 +5,12 @@ header {
 		/*font-family: Times New Roman, sans-serif;*/
 		color: $line-color;
 		float: left;
-		width: 100%;
+		
 		padding-top: 10px;
+		font-weight: 700;
 	}
 	#lk_menu {		
-		line-height: 15px;
+		line-height: 20px;
 		#contact, .lk_topmenu_li a label#client {
 			margin-top: -20px;
 		}
@@ -32,7 +33,8 @@ header {
 	header {
 		#logo a {
 			font-size: 2.5em;
-			margin: 8px 10px 7px 15%;
+			margin: 8px 0 7px 15%;
+			width: 70%;
 		}
 		#lk_menu {
 			#contact a, .lk_topmenu {	
@@ -45,7 +47,8 @@ header {
 	header {
 		#logo a {
 			font-size: 2em;
-			margin: 8px 10px 7px 7%;
+			margin: 8px 0 7px 7%;
+			width: 86%;
 		}
 		#lk_menu {
 			#contact a, .lk_topmenu {	

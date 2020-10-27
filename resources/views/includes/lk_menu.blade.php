@@ -8,8 +8,8 @@ $login_json = json_encode($вывод);
 <div id="lk_menu">
 
 	<span id="contact">
-		<a href="/site_pzm/vhod/index.php">Вход</a>
-		<a href="/site_pzm/registraciya/index.php?st=zero">Регистрация</a>
+		<a href="/sign_in">Вход</a>
+		<a href="/registration">Регистрация</a>
 	</span>
 
 	<ul class="lk_topmenu">
@@ -17,9 +17,9 @@ $login_json = json_encode($вывод);
 			<a href="#"><label id="client"></label></a>
 				
 			<ul class="lk_submenu">	
-				<li><a href="/site_pzm/lk/sozdanie.php">Создать заявку</a></li>
-				<li><a href="/site_pzm/lk/zayavki.php">Ваши заявки</a></li>
-				<li><a href="/site_pzm/lk/exit.php">Выход</a></li>			
+				<li><a href="/lk/create">Создать заявку</a></li>
+				<li><a href="/lk/statements">Ваши заявки</a></li>
+				<li><a href="/lk/exit">Выход</a></li>			
 			</ul>
 				
 		</li>

@@ -6,11 +6,21 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/details', function () {
+    return view('details.details');
+});
+
+Route::get('/category', function () {
+    return view('category.category');
+});
+
 Route::get('/support', function () {
     return view('support.support');
 });
 
-
+Route::get('/about', function () {
+    return view('about.about');
+});
 
 
 

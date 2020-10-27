@@ -38,11 +38,24 @@ ul {
   list-style: none;
 }
 
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Цвета */
 
 a,
 *:hover {
   transition: all 0.6s ease;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
 }
 
 textarea {
@@ -115,12 +128,12 @@ header #logo a {
   /*font-family: Times New Roman, sans-serif;*/
   color: #ffeb3b;
   float: left;
-  width: 100%;
   padding-top: 10px;
+  font-weight: 700;
 }
 
 header #lk_menu {
-  line-height: 15px;
+  line-height: 20px;
 }
 
 header #lk_menu #contact,
@@ -147,7 +160,8 @@ header #lk_menu #contact a:hover {
 @media (min-width: 1300px) {
   header #logo a {
     font-size: 2.5em;
-    margin: 8px 10px 7px 15%;
+    margin: 8px 0 7px 15%;
+    width: 70%;
   }
 
   header #lk_menu #contact a,
@@ -159,7 +173,8 @@ header #lk_menu #contact a:hover {
 @media (max-width: 1299px) {
   header #logo a {
     font-size: 2em;
-    margin: 8px 10px 7px 7%;
+    margin: 8px 0 7px 7%;
+    width: 86%;
   }
 
   header #lk_menu #contact a,
@@ -238,47 +253,31 @@ header #lk_menu #contact a:hover {
 			Меню
 ----------------------------------*/
 
-@media (max-width: 699px) {
-  nav {
-    width: 90%;
-    float: left;
-    background-color: #ffffff;
-    padding: 0 5% 0.7% 5%;
-  }
+nav {
+  float: left;
+  background-color: #ffffff;
 }
 
-@media (max-width: 1299px) and (min-width: 700px) {
+@media (max-width: 1299px) {
   nav {
     width: 86%;
-    float: left;
-    background-color: #ffffff;
-    padding: 0 7% 0.7% 7%;
+    padding: 0 7%;
   }
 }
 
 @media (min-width: 1300px) {
   nav {
     width: 70%;
-    float: left;
-    background-color: #ffffff;
-    padding: 0 15% 0.7% 15%;
-  }
-}
-
-@media (min-width: 837px) {
-  nav a,
-  nav#fixed a {
-    border-top: 5px solid rgba(255, 255, 255, 0);
+    padding: 0 15%;
   }
 }
 
 nav a,
 nav#fixed a {
-  padding: 0.5% 1% 0 1%;
   float: left;
-  font-family: Times New Roman, sans-serif;
   font-size: 1.4em;
   color: #686869;
+  line-height: 2em;
 }
 
 nav#fixed {
@@ -295,29 +294,28 @@ nav#fixed:hover {
 
 nav a:hover,
 nav#fixed a:hover {
-  border-top: 5px solid #ffeb3b;
-  color: #8c8c8c;
+  color: #000;
+  font-weight: 700;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 869px) {
   .line-menu {
     display: none;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 870px) {
   .topmenu {
     display: none;
   }
 }
 
 .line-menu a {
-  width: calc(90% / 5);
+  width: calc(100% / 5);
   text-align: center;
 }
 
 .submenu {
-  list-style: none;
   margin: 0;
   padding: 20px;
   position: absolute;
@@ -326,7 +324,6 @@ nav#fixed a:hover {
   z-index: 10;
   transition: 0.5s ease-in-out;
   display: none;
-  /*background: white;*/
   background: #e6e6e6;
   border: 1px solid #8c8c8c;
   border-radius: 5px;
@@ -335,7 +332,6 @@ nav#fixed a:hover {
 .topmenu_li {
   display: inline-block;
   margin-right: 20px;
-  /*float: left;*/
   position: relative;
 }
 
@@ -345,9 +341,6 @@ nav#fixed a:hover {
 
 .topmenu a {
   display: block;
-  padding: 10px 0;
-  text-decoration: none;
-  outline: none;
   transition: 0.5s linear;
 }
 
@@ -355,7 +348,6 @@ nav#fixed a:hover {
   border: 1px solid blue;
   border-radius: 5px;
   padding: 10px 15px;
-  /*color: #8c8c8c;	*/
   color: blue;
   margin: 5px;
   float: left;
@@ -366,12 +358,25 @@ nav#fixed a:hover {
 }
 
 .fa {
-  font-family: "FontAwesome";
-  color: inherit;
-  padding-left: 10px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-bars:before {
+  content: "\F0C9";
+}
+
+.fa-lg {
+  font-size: 2em;
+  vertical-align: -30%;
 }
 
 #slideMenu {
+  height: 20px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -383,13 +388,15 @@ nav#fixed a:hover {
 		Верхняя часть контента
 -----------------------------------*/
 
+#topColText,
 #topColPhoto {
-  /*	background-color: rgba(255,255,255);*/
   background-color: #14112d;
-  margin-right: 20px;
-  margin-bottom: 20px;
   float: left;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#topColPhoto {
+  margin: 0 20px 20px 0;
 }
 
 #topColPhoto img {
@@ -398,21 +405,12 @@ nav#fixed a:hover {
 }
 
 #topColText {
-  /*	background-color: rgba(255,255,255);*/
-  background-color: #14112d;
   border-radius: 5px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  float: left;
   margin-bottom: 20px;
 }
 
 #topColText h1 {
-  /*	font-family: 'RussianSuvenir';	*/
-  /*	color: blue;*/
-  /*rgba(121,50,218);*/
   color: white;
-  width: 100%;
-  text-align: center;
   text-shadow: 1px 1px 2px grey, 0 0 3em #ececee;
 }
 
