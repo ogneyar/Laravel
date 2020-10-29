@@ -8,5 +8,8 @@ echo =           =
 
 mkdir temp
 cd temp
+echo Текст как текст > text.txt
 
 @pause
+
+cls
