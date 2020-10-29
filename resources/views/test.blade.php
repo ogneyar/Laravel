@@ -28,9 +28,10 @@
 			<br>
 
 			@php			
-				include_once 'testy/testy.php';
+				//include_once 'testy/testy.php';
 			@endphp
-
+			
+			<script src="/NodeTest/test.js"></script> 
 
 <script>
 function upload(file) {
