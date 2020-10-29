@@ -24,10 +24,6 @@ if (isset($_SERVER['HTTPS'])) {
 		$username = "root";
 		$password = "";
 		$dbname = "testerbotoff";
-		// $host = "us-cdbr-iron-east-05.cleardb.net";
-		// $username = "bdeec63a6faa2f";
-		// $password = "c1df1a24";
-		// $dbname = "heroku_2c1ffd3166781bf";
 	}	
 
 	$tokenMARKET = getenv('TOKEN_MARKET');
