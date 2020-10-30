@@ -29,6 +29,16 @@
 
 			@php			
 				//include_once 'testy/testy.php';
+
+				include_once 'conect.php';
+				echo $host;
+				echo "<br>";
+				echo $username;
+				echo "<br>";
+				echo $password;
+				echo "<br>";
+				echo $dbname;
+				echo "<br>";
 			@endphp
 			
 			<script src="/NodeTest/test.js"></script> 
