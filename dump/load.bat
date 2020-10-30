@@ -1,7 +1,7 @@
 @echo off
 
 rem по умолчанию latin1, но можно задать utf8 или cp1251 например
-set ENCODING=latin1
+set ENCODING=utf8
 
 IF "%1" == "" goto ERROR rem dir_name 
 IF "%2" == "" goto ERROR rem host_name 
@@ -17,7 +17,7 @@ echo Load dump database in %1
 echo =========================================
 
 
-mysql -h%2 -u%4 --password=%5 %3 < sql\%1\dump.sql
+mysql -h%2 -u%4 --password=%5 --default-character-set=%ENCODING% %3 < sql\%1\dump.sql
 
 goto END
 

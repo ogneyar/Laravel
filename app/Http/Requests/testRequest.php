@@ -24,7 +24,9 @@ class testRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => "require|min:3|max:10",
+            'mail' => "require|min:3|max:10",
+            'text' => "require|min:3|max:10"
         ];
     }
 }

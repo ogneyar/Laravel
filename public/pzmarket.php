@@ -1,7 +1,9 @@
-﻿<?php	/*
+﻿<?php	
+$количество_лотов = 10;
+include_once 'conect.php';
+
 // Подключаем библиотеку с классом Bot
-include_once '../myBotApi/Bot.php';
-include_once '../a_conect.php';
+include_once 'myBotApi/Bot.php';
 //exit('ok');
 $id_bota = strstr($tokenMARKET, ':', true);	
 
@@ -21,7 +23,7 @@ $ссылка_на_амазон = "https://{$aws_bucket}.s3.{$aws_region}.amazon
 $показ_одного_лота = '';
 
 $запрос = "SELECT * FROM pzmarkt"; 
-if ($_GET['podrobnosti']) {
+if (isset($_GET['podrobnosti'])) {
 	$подробно = $_GET['podrobnosti'];
 	if ($подробно != 'st') $запрос = "SELECT * FROM pzmarkt WHERE id='{$подробно}'"; 
 }
@@ -233,6 +235,6 @@ if ($лот[0] == "") {
 }
 
 
-*/
+
 ?>		
 

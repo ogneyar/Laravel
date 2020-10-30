@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -41,4 +42,5 @@ Route::get('/test', function () {
     return view('test');
 })->name('test');
 
-Route::get('/test/1', 'testController@test');
+Route::get('/test/1', 'App\Http\Controllers\testController@test')->name('test-form');
+Route::post('/test/1', 'App\Http\Controllers\testController@post')->name('test-form-post');

@@ -4,9 +4,9 @@ if ($_SERVER['HTTP_HOST']=='www.prizmarket.online') header('Location: https://pr
 
 include_once '../vendor/autoload.php';
 
-$количество_лотов = 10;
-include_once 'conect.php';
-include_once 'pzmarket.php';
+// $количество_лотов = 10;
+// include_once 'conect.php';
+// include_once 'pzmarket.php';
 ?>
 
 <!DOCTYPE html>

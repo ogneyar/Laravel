@@ -25,21 +25,44 @@
 			<div>Загрузка файла! 
 				<input type="file" onchange="upload(this.files[0])">
 			</div>
-			<br>
+			-------------------------------------------------
+			<br><br>
 
 			@php			
 				//include_once 'testy/testy.php';
-
+				/*
 				include_once 'conect.php';
-				echo $host;
+				echo "host : ".$host;
 				echo "<br>";
-				echo $username;
+				echo "user : ".$username;
 				echo "<br>";
-				echo $password;
+				echo "pass : ".$password;
 				echo "<br>";
-				echo $dbname;
+				echo "db : ".$dbname;
 				echo "<br>";
+				*/
 			@endphp
+
+			@if($errors->any())
+				<div>
+					<ul>
+						@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
+			@endif
+
+			<form action="{{ route('test-form-post') }}" method="post">
+				@csrf
+				<input type="text" name="name"><br>
+				<input type="text" name="mail"><br>
+				<input type="text" name="text">
+				<button type="submit">Нажми меня</button>
+			</form>
+
+
+
 			
 			<script src="/NodeTest/test.js"></script> 
 
