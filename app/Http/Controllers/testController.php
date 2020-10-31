@@ -42,11 +42,24 @@ class testController extends Controller
 
 
         //$users = DB::table('users')->get();
-        $users = DB::table('users')->get()->where('name_client', 'Otrad');
 
-        dd($users[0]->id); 
+        // $users = DB::table('users')->get()->where('name_client', 'Otrad');
+        // dd($users[0]->id); 
 
-        //return view('user.index', ['users' => $users]);
+        //$titles = DB::table('users')->pluck('name_client');
+        // foreach ($titles as $title) {
+        //     echo "<br>".$title."<br>";
+        // }
+        //return view('test', ['titles' => $titles]);
+
+        DB::table('users')->pluck('name_client')->chunk(100, function ($users) {
+            foreach ($users as $user) {
+                echo "<br>".(string)$user."<br>";
+            }
+          
+            return false;
+        });
+
     }
 
 }

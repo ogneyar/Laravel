@@ -8,7 +8,7 @@ echo =           =
 
 mkdir temp
 cd temp
-echo Òåêñò êàê òåêñò > text.txt
+echo Ð¢ÐµÐºÑÑ‚ ÐºÐ°Ðº Ñ‚ÐµÐºÑÑ‚ > text.txt
 
 @pause
 

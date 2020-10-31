@@ -53,6 +53,17 @@
 				</div>
 			@endif
 
+			@if(isset($titles))
+				<div>
+					<ul>
+						@foreach($titles as $title)
+						<li>{{ $title }}</li>
+						@endforeach
+					</ul>
+				</div>
+			@endif
+
+
 			<form action="{{ route('test-form-post') }}" method="post">
 				@csrf
 				<input type="text" name="name"><br>
