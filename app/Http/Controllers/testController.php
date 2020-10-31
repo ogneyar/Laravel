@@ -20,9 +20,11 @@ class testController extends Controller
     }
 
     public function post(Request $req) { //testRequest
+
         dd($req->input("name"),
             $req->input("mail"),
             $req->input("text"));
+            
     }
 
 }

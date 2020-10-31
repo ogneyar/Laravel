@@ -29,4 +29,14 @@ class testRequest extends FormRequest
             'text' => "require|min:3|max:10"
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => "Поле name должно быть заполнено",
+            'mail.required' => "Поле mail должно быть заполнено",
+            'text.required' => "Поле text должно быть заполнено"
+        ];
+    }
+
 }
