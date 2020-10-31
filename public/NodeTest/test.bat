@@ -12,4 +12,4 @@ echo Текст как текст > text.txt
 
 @pause
 
-cls
+cls 

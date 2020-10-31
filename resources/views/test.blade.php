@@ -3,8 +3,11 @@
 		<head>
 				<meta charset="utf-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-
+				<meta name="csrf-token" content="{{ csrf_token() }}">
 				<title>Laravel</title>
+
+				<!-- Here we add libs for jQuery, Ajax... -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
 
 				<!-- Fonts -->
 				<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,7 +31,8 @@
 			-------------------------------------------------
 			<br><br>
 
-			@php			
+			@php		
+				// testy - тесты sql запросов
 				//include_once 'testy/testy.php';
 				/*
 				include_once 'conect.php';
@@ -42,7 +46,8 @@
 				echo "<br>";
 				*/
 			@endphp
-
+			
+			<!-- Вывод ошибок при валидации формы ПОКА НЕ РАБОТАЕТ -->
 			@if($errors->any())
 				<div>
 					<ul>
@@ -52,7 +57,8 @@
 					</ul>
 				</div>
 			@endif
-
+			
+			<!-- Тестовый вывод данных из testController -->
 			@if(isset($titles))
 				<div>
 					<ul>
@@ -72,13 +78,13 @@
 				<button type="submit">Нажми меня</button>
 			</form>
 
-
-
-			
-			<script src="/NodeTest/test.js"></script> 
+			<!-- Тест запуска bat файла из браузера -->
+			<!-- <script src="/NodeTest/test.js"></script>  -->
 
 <script>
-function upload(file) {
+// отправка файла с отслеживанием передачи для показа полосы загрузки
+function upload(file) {	
+	
 	let xhr = new XMLHttpRequest();
 
 	// отслеживаем процесс отправки
@@ -97,13 +103,55 @@ function upload(file) {
 	
 	};
 
-	//xhr.open("POST", "http://f0430377.xsph.ru/testjs2/");
-	xhr.open("POST", "/upload");
+	xhr.open("POST", "http://f0430377.xsph.ru/testjs2/");
+	//xhr.open("POST", "/upload");
 	xhr.setRequestHeader('Content-Type', 'multipart/form-data');
 	xhr.send(file);
 	
 }
-</script>
+</script> 
+
+
+
+<!-- 
+@php echo json_encode(['csrfToken' => csrf_token()]); @endphp
+<script>
+// отправка файла с помощью ajax
+function upload(file) {	
+
+		var csrf_token = $('meta[name="csrf-token"]').attr('content');
+
+		// var Data = new FormData();
+		
+		// Data.append('file', file);
+		
+		// Data.append('test', 'test');
+					
+		$.ajax ({
+			url: '/upload',
+			type: 'POST',
+			cache: false,
+			//data: Data,
+			data: {
+				'test':'test',
+				'_token':csrf_token
+			},
+			contentType: false,
+			processData: false,
+			success: function (response) {
+				$('#lk').html ("<br><h4>" + response + "</h4><br>");
+				$('#lk').show ();						
+			},
+			error: function(data){
+				$('#lk').html ("<br><h4>Ошибка запроса ajax..<br><br>" + data + "</h4><br>");
+				$('#lk').show ();
+			}			
+		});	
+}
+</script> 
+
+			<div id="lk">  </div>
+ -->
 
 		</body>
 </html>

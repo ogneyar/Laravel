@@ -6,8 +6,21 @@ if (mysqli_connect_errno()) {
 	echo "<br>Ошибка! Нет подключения к БД.<br>";
 }else {	
 	
-	dd($mysqli->query("SELECT * FROM `testy`")->fetch_all(MYSQLI_ASSOC));
-	
+	//dd($mysqli->query("SELECT * FROM `users`")->fetch_all(MYSQLI_ASSOC));
+	$результат = $mysqli->query("SELECT * FROM `users`")->fetch_all(MYSQLI_ASSOC);
+
+	echo "<div>";
+	foreach($результат as $массив){
+		foreach($массив as $запись){
+			echo $запись;
+			echo " ";
+		}
+		echo "<br>";
+	}
+	echo "</div>";
+	echo "<br>";
+
+
 	//$query = "SHOW TABLES";
 	//$query = "SELECT * FROM `test_table1` LIMIT 0, 30 ";
 	//$query = "INSERT INTO `test_table1` VALUES ('0','0','0','0')";
