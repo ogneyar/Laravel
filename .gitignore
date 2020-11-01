@@ -10,4 +10,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-dump_pzm.bat
+dump_prizmarket.bat
+dump_prizm-market-bot.bat
+load_prizmarket.bat

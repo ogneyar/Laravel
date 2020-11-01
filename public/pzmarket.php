@@ -23,8 +23,8 @@ $ссылка_на_амазон = "https://{$aws_bucket}.s3.{$aws_region}.amazon
 $показ_одного_лота = '';
 
 $запрос = "SELECT * FROM pzmarkt"; 
-if (isset($_GET['podrobnosti'])) {
-	$подробно = $_GET['podrobnosti'];
+if (isset($_GET['id'])) {
+	$подробно = $_GET['id'];
 	if ($подробно != 'st') $запрос = "SELECT * FROM pzmarkt WHERE id='{$подробно}'"; 
 }
 $результат = $mysqli->query($запрос);
@@ -70,7 +70,7 @@ while ($a < $количество_лотов){
 			$id_lota=$arrS[$i][0];	
 			$otdel=$arrS[$i][1];
 			$url=$arrS[$i][4];
-			$url = str_replace("t.me", "teleg.link", $url);
+			//$url = str_replace("t.me", "teleg.link", $url);
 			$куплю_продам=$arrS[$i][5];
 			$название=$arrS[$i][6];
 			$валюта=$arrS[$i][7];
@@ -83,9 +83,9 @@ while ($a < $количество_лотов){
 			
 			if (strpos($юзера_имя, "@") !== false) {
 				$имя = str_replace("@", "", $юзера_имя);
-				$связь = "https://teleg.link/{$имя}";		
+				$связь = "https://t.me/{$имя}";		
 			}else {
-				$связь = _дай_связь($юзера_имя);
+				$связь = _дай_связь($mysqli, $юзера_имя);
 			}
 			
 			$текст_лота[$a] = "<p>{$куплю_продам}</p>
@@ -98,7 +98,7 @@ while ($a < $количество_лотов){
 				
 			$ссыль_на_фото[$a] = $ссылка_на_амазон . $id_lota . ".jpg";		
 			
-			if ($_GET['podrobnosti']) {
+			if (isset($_GET['id'])) {
 				$запрос = "SELECT podrobno FROM `avtozakaz_pzmarket` WHERE id_zakaz='{$id_lota}'"; 
 				$результат = $mysqli->query($запрос);
 				if ($результат)	{
@@ -110,17 +110,18 @@ while ($a < $количество_лотов){
 				}else $подробности = "Нет информации..";						
 				$кнопка_подробнее = "<p>{$подробности}<span>{$дата_публикации[$a]}</span></p>";
 			}else {
-				$кнопка_подробнее = "<p><a href='/site_pzm/podrobnosti/index.php?podrobnosti={$id_lota}' title=''>Подробности</a><span>{$дата_публикации[$a]}</span></p>";				
+				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a><span>{$дата_публикации[$a]}</span></p>";				
 			}
 			
 			$лот[$a] = "<article>
 				<h3>
-					<a href='' title=''><img src='{$ссыль_на_фото[$a]}' alt='' title=''/></a>{$текст_лота[$a]}		
+					<a href='#'><img src='{$ссыль_на_фото[$a]}' alt=''></a>{$текст_лота[$a]}		
 					{$кнопка_подробнее}
 				</h3>
 			</article>";
 				
-			if ($_GET['podrobnosti'] == $id_lota) {$показ_одного_лота = $лот[$a]; $a++; $a++; break;} 
+			if (isset($_GET['id']))
+				if ($_GET['id'] == $id_lota) {$показ_одного_лота = $лот[$a]; $a++; $a++; break;} 
 			
 		}
 		
@@ -143,8 +144,8 @@ function exception_handler($exception) {
 }
 
 
-function _дай_связь($имя_клиента) {	
-	global $mysqli;
+function _дай_связь($mysqli, $имя_клиента) {	
+	//global $mysqli;
 	$ответ = false;
 	$запрос = "SELECT svyazi, svyazi_data FROM site_users WHERE login='{$имя_клиента}'";
 	$результат = $mysqli->query($запрос);
@@ -197,8 +198,9 @@ if ($лот[0] == "") {
 		$тип_кн_назад = 'hidden';		
 	}else $тип_кн_назад = 'submit';
 	
-	if ($_GET['podrobnosti'] == 'st') $action = '/site_pzm/podrobnosti/index.php?podrobnosti=st';
-	else $action = '/';
+	$action = '/';
+	if (isset($_GET['id']))
+		if ($_GET['id'] == 'st') $action = '/details/?id=st';
 	
 	$лот[$a] = "<article>
 		<h3><br>
@@ -216,8 +218,9 @@ if ($лот[0] == "") {
 		
 }else {
 	if ($последний_лот) {	
-		if ($_GET['podrobnosti'] == 'st') $action = '/site_pzm/podrobnosti/index.php?podrobnosti=st';
-		else $action = '/';
+		$action = '/';
+		if (isset($_GET['id']))
+			if ($_GET['id'] == 'st') $action = '/details/?id=st';
 			
 		$лот[$a] = "<article>
 			<h3><br>

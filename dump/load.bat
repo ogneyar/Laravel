@@ -13,7 +13,7 @@ set ENCODING="%6"
 )
 
 echo =========================================
-echo Load dump database in %1
+echo Load dump database is %1
 echo =========================================
 
 
