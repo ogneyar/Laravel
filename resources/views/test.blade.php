@@ -28,6 +28,10 @@
 			<div>Загрузка файла! 
 				<input type="file" onchange="upload(this.files[0])">
 			</div>
+			<br>
+			<div style="width:200px;background:#f0f0f0;">
+				<div id="lk" style="background:red;width:0;">&nbsp;</div>
+			</div>
 			-------------------------------------------------
 			<br><br>
 
@@ -86,10 +90,15 @@
 function upload(file) {	
 	
 	let xhr = new XMLHttpRequest();
+	var lk = document.getElementById('lk');
 
 	// отслеживаем процесс отправки
 	xhr.upload.onprogress = function(event) {
-		console.log(`Отправлено ${event.loaded} из ${event.total}`);
+		percent = Math.round(event.loaded/event.total*100)+"%";
+		console.log(`Отправлено ${event.loaded} из ${event.total} в процентах - ${percent}`);
+				
+		lk.innerHTML = percent;
+		lk.style.width = percent;
 	};
 
 	// Ждём завершения: неважно, успешного или нет
@@ -148,10 +157,9 @@ function upload(file) {
 			}			
 		});	
 }
-</script> 
+</script>  -->
 
-			<div id="lk">  </div>
- -->
+
 
 		</body>
 </html>
