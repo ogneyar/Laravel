@@ -87,7 +87,7 @@ include_once '../vendor/autoload.php';
 			<div id="TopCol">		
 				@include('includes.topside')
 			</div>
-			<article id="leftCol">		
+			<div id="leftCol">		
 				@yield('content')
 			</div>
 			<div id="rightCol">
