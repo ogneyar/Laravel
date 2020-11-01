@@ -1,7 +1,8 @@
 <div id="logo">
 	<a href="/">
 	@php		
-		if ($tester == 'да') {  	
+		include 'conect.php';
+		if ($tester == 'yes') {  	
 			echo "TESTMarket";
 		}else {
 			echo "PRIZMarket";
