@@ -45,17 +45,12 @@ h6 {
 $font-stack: 'Nunito', sans-serif;
 
 /* Цвета */
-// $main-color: rgba(172,172,183);
-// $dark-color: rgba(20,17,45);
-// $yellow: rgba(255,235,59);
-// $violet: rgba(76,0,164);
-// $beige: rgba(230,230,230);
-
 $main-color: rgba(172,172,183);
 $dark-color: rgba(20,17,45);
 $yellow: rgba(255,235,59);
 $violet: rgba(76,0,164);
 $beige: rgba(230,230,230);
+
 
 @mixin transition($property) {
 	-webkit-transition: $property;

@@ -25,7 +25,7 @@ if (isset($_SERVER['HTTPS'])) {
 		$password = "";
 		$dbname = "testerbotoff";
 	}
-
+	
 	$APP_KEY = getenv('APP_KEY_LARAVEL');
 
 	$tokenMARKET = getenv('TOKEN_MARKET');
