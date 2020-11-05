@@ -27,17 +27,23 @@ $(document).ready(function() {
 	doc.addEventListener("DOMContentLoaded", function(event){
 		var img = doc.getElementsByClassName('img_lot');
 		//var img = doc.querySelectorAll('img_lot');
-
-		//console.log(img.length); 		
-		for (i=0;i<img.length;i++) {
+		
+		for (var i=0;i<img.length;i++) {
 			if (img[i].height > img[i].width) {
+
 				var percent = (img[i].width/img[i].height) * 100;
 				img[i].style.width = percent+"%";
-				console.log(percent+"%"); 
+
+				//console.log(percent+"%"); 
+
+				var padding = (img[i].height - img[i].width) / 2;
+				img[i].style.paddingLeft = padding+"px";
+				img[i].style.paddingRight = padding+"px";
+				img[i].style.align = "center";
+
+				//console.log(padding+"px");
 			}
-			//var difference = Math.abs(img[i].height - img[i].width);
 		}
-		//console.log(img); 
 
 	});
 

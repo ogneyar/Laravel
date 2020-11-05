@@ -113,8 +113,8 @@ while ($a < $количество_лотов){
 				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a><span>{$дата_публикации[$a]}</span></p>";				
 			}
 			
-			$лот[$a] = "<article>
-				<p align='center'><a href='#'><div style='width:100%;float:center;'><img class='img_lot' src='{$ссыль_на_фото[$a]}' alt=''></div></a></p>{$текст_лота[$a]}		
+			$лот[$a] = "<article style='width:100%;'>
+				<a href='#'><div style='width:100%;'><img class='img_lot' src='{$ссыль_на_фото[$a]}' alt=''></div></a>{$текст_лота[$a]}		
 					{$кнопка_подробнее}
 				</article>";
 				
