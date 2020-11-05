@@ -7,10 +7,7 @@ include_once 'myBotApi/Bot.php';
 //exit('ok');
 $id_bota = strstr($tokenMARKET, ':', true);	
 
-echo $host;
-$лот = [];
-/*
-//$mysqli = new mysqli($host, $username, $password, $dbname);
+$mysqli = new mysqli($host, $username, $password, $dbname);
 
 // проверка подключения 
 if (mysqli_connect_errno()) {
