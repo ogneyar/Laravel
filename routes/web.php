@@ -44,3 +44,7 @@ Route::get('/test', function () {
 
 Route::get('/test/1', 'App\Http\Controllers\testController@test')->name('test-form');
 Route::post('/test/1', 'App\Http\Controllers\testController@post')->name('test-form-post');
+
+Route::get('/test2', function () {
+    return view('test_img');
+})->name('test_img');
