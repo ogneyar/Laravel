@@ -114,7 +114,7 @@ while ($a < $количество_лотов){
 			}
 			
 			$лот[$a] = "<article style='width:100%;'>
-				<a href='#'><div style='width:100%;'><img class='img_lot' src='{$ссыль_на_фото[$a]}' alt=''></div></a>{$текст_лота[$a]}		
+				<a href='#'><div style='width:100%;'><img class='img' src='{$ссыль_на_фото[$a]}' alt=''></div></a>{$текст_лота[$a]}		
 					{$кнопка_подробнее}
 				</article>";
 				
