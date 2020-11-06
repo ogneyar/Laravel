@@ -88,13 +88,12 @@ while ($a < $количество_лотов){
 				$связь = _дай_связь($mysqli, $юзера_имя);
 			}
 			
-			$текст_лота[$a] = "<p>{$куплю_продам}</p>
-				<p>{$otdel}</p>
-				<p></p>
+			$текст_лота[$a] = "<p><span class='hesh'>{$куплю_продам}&nbsp;{$otdel}</span></p>				
 				<p><a href={$url}>{$название}</a></p>
-				<p>{$валюта}</p>
-				<p>{$хештеги}</p>
-				<p>для связи: <a href={$связь}>{$юзера_имя}</a></p><br /><br />";			
+				<p>валюта: {$валюта}</p>
+				<p>местонахождение: {$хештеги}</p>				
+				<p>для связи: <a href={$связь}>{$юзера_имя}</a></p>
+				<p>&nbsp;</p>";			
 				
 			$ссыль_на_фото[$a] = $ссылка_на_амазон . $id_lota . ".jpg";		
 			
@@ -108,9 +107,9 @@ while ($a < $количество_лотов){
 					$результМассив = $результат->fetch_all(MYSQLI_ASSOC);		
 					$подробности = $результМассив[0]['podrobno'];
 				}else $подробности = "Нет информации..";						
-				$кнопка_подробнее = "<p>{$подробности}<span>{$дата_публикации[$a]}</span></p>";
+				$кнопка_подробнее = "<p>{$подробности}&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";
 			}else {
-				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a><span>{$дата_публикации[$a]}</span></p>";				
+				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a>&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";				
 			}
 			
 			$лот[$a] = "<article style='width:100%;'>
@@ -205,10 +204,10 @@ if ($лот[0] == "") {
 		<form action='{$action}' method='post' id='form_nazad'></form>
 		<form action='{$action}' method='post' id='form_dalee'></form>
 		<center>			
-				<input type='hidden' name='last_lot' id='last_lot' value='{$последний_лот}' form='form_nazad'>
+				<input type='hidden' name='last_lot' id='last_lot_form_nazad' value='{$последний_лот}' form='form_nazad'>
 				<input type='{$тип_кн_назад}' class='button' name='nazad' id='nazad' value='&lt&lt Назад' form='form_nazad'>
 			
-				<input type='hidden' name='last_lot' id='last_lot' value='{$последний_лот}' form='form_dalee'>				
+				<input type='hidden' name='last_lot' id='last_lot_form_dalee' value='{$последний_лот}' form='form_dalee'>				
 				<input type='submit' class='button' name='dalee' id='dalee'  value='Вперёд &gt&gt' form='form_dalee'>
 		</center>
 		</h3>
