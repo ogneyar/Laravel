@@ -97,7 +97,7 @@
 
 /*require('./bootstrap');*/
 
-/* закоментил строку на время */
+/* Временно закоментировал */
 $(document).ready(function () {
   /* Прилипание меню к верху страницы */
   // функцию скролла привязать к окну браузера
@@ -105,33 +105,47 @@ $(document).ready(function () {
     var distanceTop = $('#slideMenu').offset().top;
     if ($(window).scrollTop() >= distanceTop) $('nav').attr("id", "fixed");else //if ($(window).scrollTop() < distanceTop)
       $('nav').attr("id", "nav");
-  }); // var doc = document;	
-  // var img = doc.getElementsByClassName('img_lot');
-  // console.log(img[0].src); 
+  });
 });
 
 (function () {
-  var doc = document;
-  doc.addEventListener("DOMContentLoaded", function (event) {
-    var img = doc.getElementsByClassName('img_lot'); //var img = doc.querySelectorAll('img_lot');
+  var doc = document,
+      win = window;
+  doc.addEventListener("DOMContentLoaded", function () {
+    //console.log("Страница загрузилась!");
+    center();
+    win.addEventListener("resize", function () {
+      //console.log("Изминился экран!");
+      center();
+    });
+  });
+
+  var center = function centering() {
+    var img = doc.getElementsByClassName('img');
 
     for (var i = 0; i < img.length; i++) {
       if (img[i].height > img[i].width) {
+        //console.log(img[i].width);
         var percent = img[i].width / img[i].height * 100;
         img[i].style.width = percent + "%"; //console.log(percent+"%"); 
 
         var padding = (img[i].height - img[i].width) / 2;
         img[i].style.paddingLeft = padding + "px";
-        img[i].style.paddingRight = padding + "px";
-        img[i].style.align = "center"; //console.log(padding+"px");
+        img[i].style.paddingRight = padding + "px"; //console.log(padding+"px");
       }
     }
-  });
+  };
 })();
-
-$(window).load(function () {// инициализация после того, как загрузились изображения на странице
-  // теперь страница полностью загружена, включая все фреймы, объекты и картинки
+/*
+// события jquery
+$(window).resize(function(){    
+	// событие, возникающее при изменении ширины экрана
 });
+$(window).load(function(){
+	// инициализация после того, как загрузились изображения на странице
+	// теперь страница полностью загружена, включая все фреймы, объекты и картинки
+});
+*/
 
 /***/ }),
 
@@ -153,8 +167,8 @@ $(window).load(function () {// инициализация после того, �
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\VSCode\Laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\VSCode\Laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Laravel\Laravel-main\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Laravel\Laravel-main\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
