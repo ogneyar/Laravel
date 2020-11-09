@@ -149,9 +149,9 @@ $(window).load(function(){
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
+/***/ "./resources/scss/app.scss":
 /*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
+  !*** ./resources/scss/app.scss ***!
   \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -162,13 +162,13 @@ $(window).load(function(){
 
 /***/ 0:
 /*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  !*** multi ./resources/js/app.js ./resources/scss/app.scss ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Laravel\Laravel-main\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Laravel\Laravel-main\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\VSCode\Laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\VSCode\Laravel\resources\scss\app.scss */"./resources/scss/app.scss");
 
 
 /***/ })

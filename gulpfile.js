@@ -4,11 +4,11 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var nodemon = require('gulp-nodemon');
-
 var php = require('gulp-connect-php');
 
 var browsersync = require('browser-sync').create();
 var reload  = browsersync.reload;
+
 
 
 function sass_converter(cb) {        
@@ -36,21 +36,9 @@ function sass_converter(cb) {
 function watchSass() {
     gulp.watch('./resources/scss/**/*', sass_converter);
 }
-/*
-function browserSync() {
-    browsersync.init({
-		server: {
-			baseDir: "./",
-			index: "index.html"
-		},
-		port: 8000,
-		browser: "opera",
-		open: 'external'
-	});
-}
-*/
-function php1() {
-    php.server({ base: './test', port: 8080, keepalive: true});
+
+function php_func() {
+    php.server({ base: './resources/views', port: 8080, keepalive: true});
 }
 function Sync() {
     browsersync.init({
@@ -61,20 +49,7 @@ function Sync() {
     });
 }
 function watch() {
-    gulp.watch('./test/index.php', reload);
+    gulp.watch('./resources/views/*.blade.php', reload);
 }
 
-/*
-gulp.task('php1', function() {
-    php.server({ base: 'test', port: 8080, keepalive: true});
-});
-gulp.task('Sync', php1, function() {
-    browsersync.init({
-        proxy: '127.0.0.1:8080',
-        port: 8000
-    });
-});
-*/
-gulp.task('default', gulp.parallel(php1, Sync, watch));
-
-//gulp.task('default', gulp.parallel(browserSync, watchSass));
+gulp.task('default', gulp.parallel(php_func, Sync, watch));

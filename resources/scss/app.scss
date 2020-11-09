@@ -23,6 +23,7 @@ body {
   padding: 10px;
   color: #333;
 }
+
 h6 {
 	@extend %repeat-style;
 	background: $secondary-color;
@@ -45,11 +46,11 @@ h6 {
 $font-stack: 'Nunito', sans-serif;
 
 /* Цвета */
-$main-color: rgba(172,172,183);
-$dark-color: rgba(20,17,45);
-$yellow: rgba(255,235,59);
-$violet: rgba(76,0,164);
-$beige: rgba(230,230,230);
+$main-color: rgb(172,172,183);
+$dark-color: rgb(20,17,45);
+$yellow: rgb(255,235,59);
+$violet: rgb(76,0,164);
+$beige: rgb(230,230,230);
 
 @mixin transition($property) {
 	-webkit-transition: $property;
