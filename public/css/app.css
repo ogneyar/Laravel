@@ -73,6 +73,11 @@ label {
   font-size: 1.2em;
 }
 
+article {
+  width: 100%;
+  /*text-align: center;*/
+}
+
 .b_blue {
   color: blue;
 }
@@ -742,6 +747,23 @@ label #cancel {
   color: white;
 }
 
+/* -------------------------------*/
+
+/* кнопки Далее и Назад, на главной странице*/
+
+/* -------------------------------*/
+
+#dalee,
+#nazad {
+  border-radius: 100px;
+  padding: 15px 25px;
+}
+
+#forms_button {
+  text-align: center;
+  padding: 20px 0;
+}
+
 /* ЭТО то что ниже НАДО ДОРАБОТАТЬ!!! */
 
 /*----------------------------------*/
@@ -800,16 +822,6 @@ label #cancel {
 }
 
 /*----------------------------------*/
-
-#leftCol #form_nazad {
-  width: 40%;
-}
-
-#leftCol #form_dalee {
-  width: 40%;
-}
-
-/* -------------------------------*/
 
 /* -------------------------------*/
 

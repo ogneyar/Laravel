@@ -112,7 +112,7 @@ while ($a < $количество_лотов){
 				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a>&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";				
 			}
 			
-			$лот[$a] = "<article style='width:100%;'>
+			$лот[$a] = "<article>
 				<a href='#'><div style='width:100%;'><img class='img' src='{$ссыль_на_фото[$a]}' alt=''></div></a>{$текст_лота[$a]}		
 					{$кнопка_подробнее}
 				</article>";
@@ -184,9 +184,9 @@ $ссыль_на_саппорт_бота = "https://teleg.link/Prizm_market_supp
 
 if ($лот[0] == "") {	
 	$лот[0] = "<article>
-		<h3><br><center>
+		<center>
 			<p>Больше лотов нет.</p>
-		</center></h3>
+		</center>
 	</article>";
 	
 }elseif ($лот[$a-1] != "")  { 
@@ -199,18 +199,15 @@ if ($лот[0] == "") {
 	if (isset($_GET['id']))
 		if ($_GET['id'] == 'st') $action = '/details/?id=st';
 	
-	$лот[$a] = "<article>
-		<h3><br>
+	$лот[$a] = "<article id='forms_button'>
 		<form action='{$action}' method='post' id='form_nazad'></form>
 		<form action='{$action}' method='post' id='form_dalee'></form>
-		<center>			
-				<input type='hidden' name='last_lot' id='last_lot_form_nazad' value='{$последний_лот}' form='form_nazad'>
-				<input type='{$тип_кн_назад}' class='button' name='nazad' id='nazad' value='&lt&lt Назад' form='form_nazad'>
+		
+			<input type='hidden' name='last_lot' id='last_lot_form_nazad' value='{$последний_лот}' form='form_nazad'>
+			<input type='{$тип_кн_назад}' class='button' name='nazad' id='nazad' value='&lt&lt Назад' form='form_nazad'>
 			
-				<input type='hidden' name='last_lot' id='last_lot_form_dalee' value='{$последний_лот}' form='form_dalee'>				
-				<input type='submit' class='button' name='dalee' id='dalee'  value='Вперёд &gt&gt' form='form_dalee'>
-		</center>
-		</h3>
+			<input type='hidden' name='last_lot' id='last_lot_form_dalee' value='{$последний_лот}' form='form_dalee'>				
+			<input type='submit' class='button' name='dalee' id='dalee'  value='Вперёд &gt&gt' form='form_dalee'>
 	</article>";
 		
 }else {
