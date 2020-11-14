@@ -25,7 +25,7 @@
 		</head>
 		<body>
 	
-			<div>Загрузка файла! 
+			<div>Загрузка файла!
 				<input type="file" onchange="upload(this.files[0])">
 			</div>
 			<br>

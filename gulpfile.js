@@ -3,13 +3,10 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var nodemon = require('gulp-nodemon');
 var php = require('gulp-connect-php');
 
 var browsersync = require('browser-sync').create();
 var reload  = browsersync.reload;
-
-
 
 function sass_converter(cb) {        
     gulp.src('./resources/scss/app.scss')
@@ -38,12 +35,12 @@ function watchSass() {
 }
 
 function php_func() {
-    php.server({ base: './resources/views', port: 8080, keepalive: true});
+    php.server({ base: './resources/views', port: 8000, keepalive: true});
 }
 function Sync() {
     browsersync.init({
-        proxy: '127.0.0.1:8080',
-        port: 8000,
+        proxy: '127.0.0.1:8000',
+        port: 3000,
 		browser: "opera",
 		open: 'external'
     });
