@@ -167,8 +167,8 @@ $(window).load(function(){
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Node\Laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Node\Laravel\resources\scss\app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! C:\VSCode\Laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\VSCode\Laravel\resources\scss\app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
