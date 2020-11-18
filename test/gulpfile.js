@@ -46,7 +46,7 @@ function Sync() {
     });
 }
 function watch() {
-    gulp.watch('./resources/views/*.blade.php', reload);
+    gulp.watch('./resources/views/*.blade.php', gulp.parallel(reload, watch));
 }
 
 gulp.task('default', gulp.parallel(php_func, Sync, watch));
