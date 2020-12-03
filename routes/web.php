@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
 Route::post('/', function () {
     return view('home');
 })->name('home_post');
@@ -13,11 +14,16 @@ Route::post('/', function () {
 Route::get('/details', function () {
     return view('details.details');
 })->name('details');
+
 Route::post('/details', function () {
     return view('details.details');
 })->name('details_post');
 
 Route::get('/category', function () {
+    return view('category.category');
+});
+
+Route::post('/category', function () {
     return view('category.category');
 });
 

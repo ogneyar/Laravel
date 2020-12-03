@@ -1,7 +1,7 @@
 <nav id="menu">
 	<div class="line-menu">
 		<a href="/">Главная</a>
-		<a href="/details">Подробности</a>
+		<a href="/details?id=all">Подробности</a>
 		<a href="/category">Категории</a>
 		<a href="/support">ТехПоддержка</a>
 		<a href="/about">О нас</a>
@@ -16,7 +16,7 @@
 			<header>&nbsp;М&nbsp;Е&nbsp;Н&nbsp;Ю&nbsp;</header>
 			<ul>	
 				<li><a href="/">Главная</a></li>
-				<li><a href="/details">Подробности</a></li>
+				<li><a href="/details/?id=all">Подробности</a></li>
 				<li><a href="/category">Категории</a></li>
 				<li><a href="/support">ТехПоддержка</a></li>
 				<li><a href="/about">О нас</a></li>

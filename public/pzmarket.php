@@ -23,10 +23,9 @@ $ссылка_на_амазон = "https://{$aws_bucket}.s3.{$aws_region}.amazon
 $показ_одного_лота = '';
 
 $запрос = "SELECT * FROM pzmarkt"; 
-if (isset($_GET['id'])) {
-	$подробно = $_GET['id'];
-	if ($подробно != 'st') $запрос = "SELECT * FROM pzmarkt WHERE id='{$подробно}'"; 
-}
+if (isset($_GET['id']) && ($_GET['id'] != 'all')) 
+	$запрос = "SELECT * FROM pzmarkt WHERE id={$_GET['id']}";
+
 $результат = $mysqli->query($запрос);
 if ($результат)	{
 	$i = $результат->num_rows;
@@ -70,7 +69,6 @@ while ($a < $количество_лотов){
 			$id_lota=$arrS[$i][0];	
 			$otdel=$arrS[$i][1];
 			$url=$arrS[$i][4];
-			//$url = str_replace("t.me", "teleg.link", $url);
 			$куплю_продам=$arrS[$i][5];
 			$название=$arrS[$i][6];
 			$валюта=$arrS[$i][7];
@@ -88,16 +86,16 @@ while ($a < $количество_лотов){
 				$связь = _дай_связь($mysqli, $юзера_имя);
 			}
 			
-			$текст_лота[$a] = "<p><span class='hesh'>{$куплю_продам}&nbsp;{$otdel}</span></p>				
+			$текст_лота[$a] = "<p><span class='hesh'>{$куплю_продам}&nbsp;{$otdel}</span></p>
 				<p><a href={$url}>{$название}</a></p>
 				<p>валюта: {$валюта}</p>
-				<p>местонахождение: {$хештеги}</p>				
+				<p>местонахождение: {$хештеги}</p>
 				<p>для связи: <a href={$связь}>{$юзера_имя}</a></p>
-				<p>&nbsp;</p>";			
+				<p>&nbsp;</p>";
 				
-			$ссыль_на_фото[$a] = $ссылка_на_амазон . $id_lota . ".jpg";		
+			$ссыль_на_фото[$a] = $ссылка_на_амазон . $id_lota . ".jpg";
 			
-			if (isset($_GET['id'])) {
+			if ( isset($_GET['id']) || ( isset($details) && ($details == 'all') ) ) {
 				$запрос = "SELECT podrobno FROM `avtozakaz_pzmarket` WHERE id_zakaz='{$id_lota}'"; 
 				$результат = $mysqli->query($запрос);
 				if ($результат)	{
@@ -109,7 +107,7 @@ while ($a < $количество_лотов){
 				}else $подробности = "Нет информации..";						
 				$кнопка_подробнее = "<p>{$подробности}&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";
 			}else {
-				$кнопка_подробнее = "<p><a href='/details/?id={$id_lota}' title=''>Подробности</a>&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";				
+				$кнопка_подробнее = "<p><a href='/details?id={$id_lota}' title=''>Подробности</a>&nbsp;<span class='date'>{$дата_публикации[$a]}</span></p>";				
 			}
 			
 			$лот[$a] = "<article>
@@ -179,7 +177,7 @@ $ссыль_на_саппорт_бота = "https://teleg.link/Prizm_market_supp
 
 // ---------------------------------------
 // добавление кнопки "Далее" в конце лотов
-// ---------------------------------------
+// --------------------------------------- 
 
 
 if (isset($лот[0]) && $лот[0] == "") {	
@@ -189,8 +187,7 @@ if (isset($лот[0]) && $лот[0] == "") {
 		</center>
 	</article>";
 	
-}elseif (isset($лот[$a-1]) && $лот[$a-1] != "" )  {
-// }elseif (true)  {
+}elseif (isset($лот[$a-1]) && $лот[$a-1] != "" ) {
 	
 	if (!$последний_лот) {
 		$тип_кн_назад = 'hidden';		
